@@ -33,6 +33,20 @@ HR reviews and approves/rejects the request
 
 Employee can track status in list view
 
+>>>Roles and Permissions 
+
+Employee Role:
+
+Can create new leave requests
+
+Can view their previous leave requests in List View
+
+HR Role:
+
+Can review employee leave requests
+Can approve or reject requests
+cannot approve/reject their own leave request
+
 >>>Prerequisites
 
 Before using this app, ensure the following are installed:
@@ -58,12 +72,17 @@ Step 1:
 Get Employee Leave App (From GitHub)
 
 Install from GitHub
+
 cd frappe-bench
+
 bench get-app https://github.com/chakradhar-cherukuri/employee_leave_app.git
+
 bench --site site_name install-app employee
 
 Step 2: Migrate and Restart
+
 bench migrate
+
 bench restart
 
 Step 3: Using the App
@@ -81,11 +100,16 @@ View lists and reports
 All Employee data comes from HRMS to Employee
 
 >>>Common Commands 
-Git Workflow 
+Git Workflow
+
 git pull 
+
 git status
+
 git add .
+
 git commit -m "Meaningful message"
+
 git push
 
 >>>App Structure Overview
@@ -99,4 +123,7 @@ employee_leave_app/
 ├── setup.py
 └── pyproject.toml
 
+clone Repository 
+
+https://github.com/chakradhar-cherukuri/employee_leave_app.git
 
