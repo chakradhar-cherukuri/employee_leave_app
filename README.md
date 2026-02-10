@@ -65,5 +65,45 @@ Before installing this app, ensure the following are installed:
 cd frappe-bench
 bench get-app https://github.com/chakradhar-cherukuri/employee_leave_app.git
 bench --site site_name install-app employee_leave_app
+```
 
+step_2:
+  title: "Migrate and Restart"
+  commands:
+    - bench migrate
+    - bench restart
 
+using_the_app:
+  steps:
+    - "Login to ERPNext"
+    - "Open the Employee Leave App module"
+    - "Select an Employee"
+    - "Create or manage leave-related records"
+    - "View lists and reports"
+  note: "All Employee data comes from HRMS → Employee"
+
+common_git_commands:
+  - git pull
+  - git status
+  - git add .
+  - git commit -m "Meaningful message"
+  - git push
+
+app_structure_overview:
+  employee_leave_app:
+    employee_leave_app:
+      - doctype/
+      - report/
+      - hooks.py
+      - api.py
+    files:
+      - README.md
+      - setup.py
+      - pyproject.toml
+
+clone_repository:
+  command: "git clone https://github.com/chakradhar-cherukuri/employee_leave_app.git"
+
+author:
+  name: "Chakradhar Cherukuri"
+  github: "https://github.com/chakradhar-cherukuri"
