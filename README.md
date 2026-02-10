@@ -1,59 +1,105 @@
-<<<<<<< HEAD
-Employee Leave Request App
 
-1. Setup
-- bench get-app <repo-url>
-- bench install-app employee_leave_app
-- bench migrate
+>>>About the App
 
-2. Features
-- Auto total days calculation
-- Date validation
-- HR-only approval
-- No self approval
+Employee Leave App is a custom Frappe that extends the HR functionality by managing employee leave processes in a simple and structured way.
 
-3. Logic Flow
-Employee → Create Request → HR Review → Approve/Reject
-=======
-### Employee Leave App
+The app is designed to work alongside HRMS and uses the Employee doctype provided by the HRMS app. It does not duplicate core HR doctypes.
 
-employee leave management
+>>> What This App Does (How It Works)
 
-### Installation
+Uses existing Employee records from HRMS
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+Allows employees to raise new leave requests
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app employee
-```
+Automatically calculates total leave days based on selected dates
 
-### Contributing
+Enforces validation rules before submission
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+Routes leave requests for HR approval only
 
-```bash
-cd apps/employee
-pre-commit install
-```
+Provides list and history view of employee leave requests
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+>>Typical flow:
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+Employee logs in
 
-### CI
+Employee creates a new Leave Request
 
-This app can use GitHub Actions for CI. The following workflows are configured:
+System validates dates and calculates total days
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
+Leave request is submitted for approval
+
+HR reviews and approves/rejects the request
+
+Employee can track status in list view
+
+>>>Prerequisites
+
+Before using this app, ensure the following are installed:
+
+Ubuntu / Linux
+
+Python 3.10 or later
+
+Node.js 18+
+
+Yarn
+
+Redis
+
+MariaDB / MySQL
+
+Frappe Bench
+
+HRMS app (mandatory)
+
+Check bench:
 
 
-### License
 
-mit
->>>>>>> 0a87a1a (feat: Initialize App)
+Step 1: 
+Get Employee Leave App (From GitHub)
+
+Install from GitHub
+cd frappe-bench
+bench get-app https://github.com/chakradhar-cherukuri/employee_leave_app.git
+bench --site site_name install-app employee
+
+Step 1: Migrate and Restart
+bench migrate
+bench restart
+
+Step 3: Using the App
+
+Login to ERPNext
+
+Open the Employee Leave App module
+
+Select an Employee
+
+Create or manage leave-related records provided by this app
+
+View lists and reports
+
+All Employee data comes from HRMS to Employee
+
+>>>Common Commands 
+Git Workflow 
+git pull 
+git status
+git add .
+git commit -m "Meaningful message"
+git push
+
+>>>App Structure Overview
+employee_leave_app/
+├── employee_leave_app/
+│   ├── doctype/
+│   ├── report/
+│   ├── hooks.py
+│   └── api.py
+├── README.md
+├── setup.py
+└── pyproject.toml
+
+
