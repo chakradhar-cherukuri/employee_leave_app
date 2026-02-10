@@ -70,7 +70,9 @@ bench --site site_name install-app employee_leave_app
 
   title: "Migrate and Restart"
   commands:
+  
     - bench migrate
+    
     - bench restart
 
 using_the_app:
