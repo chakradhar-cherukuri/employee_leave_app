@@ -59,7 +59,7 @@ Before installing this app, ensure the following are installed:
 
 ## Installation
 
-### Step 1: Get Employee Leave App from GitHub
+Get Employee Leave App from GitHub
 
 ```bash
 cd frappe-bench
@@ -67,7 +67,7 @@ bench get-app https://github.com/chakradhar-cherukuri/employee_leave_app.git
 bench --site site_name install-app employee_leave_app
 ```
 
-step_2:
+
   title: "Migrate and Restart"
   commands:
     - bench migrate
