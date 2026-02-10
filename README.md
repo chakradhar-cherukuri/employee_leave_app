@@ -53,10 +53,7 @@ Frappe Bench
 
 HRMS app (mandatory)
 
-Check bench:
-
-
-
+>>>
 Step 1: 
 Get Employee Leave App (From GitHub)
 
@@ -65,7 +62,7 @@ cd frappe-bench
 bench get-app https://github.com/chakradhar-cherukuri/employee_leave_app.git
 bench --site site_name install-app employee
 
-Step 1: Migrate and Restart
+Step 2: Migrate and Restart
 bench migrate
 bench restart
 
