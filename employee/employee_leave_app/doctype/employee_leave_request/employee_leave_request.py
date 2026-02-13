@@ -1,13 +1,8 @@
 # Copyright (c) 2026, chakri and contributors
 # For license information, please see license.txt
 
-# import frappe
 from frappe.model.document import Document
 import frappe
-from frappe.utils import date_diff
-
-import frappe
-from frappe.model.document import Document
 from frappe.utils import date_diff
 
 class EmployeeLeaveRequest(Document):
@@ -29,11 +24,11 @@ class EmployeeLeaveRequest(Document):
     def check_approval_rules(self):
         if self.status == "Approved":
 
-            # ✅ Correct role check
+        
             if "HR Manager" not in frappe.get_roles():
                 frappe.throw("Only HR can approve leave requests")
 
-            # Prevent self approval
+    
             employee_user = frappe.db.get_value(
                 "Employee", self.employee, "user_id"
             )
